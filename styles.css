@@ -1075,6 +1075,21 @@ em {
   }
 }
 
+/* ---------- Scroll reveal (bidirectional) ---------- */
+.has-reveal .fleet .card,
+.has-reveal .services .tile {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.has-reveal .fleet .card.is-revealed,
+.has-reveal .services .tile.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ---------- Section-scoped serif (hero, fleet -> contact) ---------- */
 .hero,
 .hero *,

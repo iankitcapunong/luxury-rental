@@ -22,6 +22,25 @@ hamburger?.addEventListener('click', () => {
   }
 });
 
+// Scroll-reveal for fleet cards and service tiles (bidirectional)
+(function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+  const els = document.querySelectorAll('.fleet .card, .services .tile');
+  if (!els.length) return;
+  document.documentElement.classList.add('has-reveal');
+  els.forEach((el, i) => {
+    el.style.transitionDelay = (i % 5) * 0.08 + 's';
+  });
+  const obs = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) e.target.classList.add('is-revealed');
+      else e.target.classList.remove('is-revealed');
+    }
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach((el) => obs.observe(el));
+})();
+
 // Concierge chat (rule-based FAQ)
 (function () {
   const kb = [
