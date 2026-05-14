@@ -840,6 +840,10 @@ em {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 40px 36px;
+  box-shadow: 0 12px 32px -16px rgba(15, 17, 18, 0.22);
 }
 .reserve__form label {
   display: flex;
