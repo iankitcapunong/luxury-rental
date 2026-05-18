@@ -714,7 +714,7 @@ em {
 .hero.hero--left .hero__content {
   margin: 0;
   text-align: left;
-  padding: 0 56px 56px;
+  padding: 0 56px 96px;
   max-width: 720px;
 }
 .hero.hero--left .hero__title {
