@@ -117,7 +117,7 @@ hamburger?.addEventListener('click', () => {
     { label: 'Service area', topicId: 'area' },
     { label: 'Booking', topicId: 'booking' }
   ];
-  const greeting = "Good day. I'm the Luxury Transport concierge. Ask about our fleet, rates, service area or booking, and I'll reply right away.";
+  const greeting = "Good day. I attend to bookings, routes, and anything else.";
   const fallback = "I don't have a direct answer for that. Please use the Reserve form below, or email bookings@luxurytransport.co.uk and a concierge will be in touch within the hour.";
 
   const toggle = document.getElementById('chatToggle');
