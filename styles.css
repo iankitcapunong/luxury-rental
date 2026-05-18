@@ -324,9 +324,10 @@ em {
   text-align: center;
 }
 .about-us__body p {
-  font-size: 17px;
-  line-height: 1.85;
-  color: var(--ink-soft);
+  font-size: 21px;
+  line-height: 1.7;
+  color: var(--ink);
+  font-weight: 400;
   margin: 0 0 28px;
 }
 .about-us__body p:last-child {
@@ -340,7 +341,8 @@ em {
     padding: 0 20px;
   }
   .about-us__body p {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 1.65;
   }
 }
 
