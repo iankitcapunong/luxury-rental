@@ -1,20 +1,47 @@
-// Page skeleton loader — hide after load with a minimum visible duration
+// Dark fade transition between pages
 (function () {
-  const loader = document.getElementById('pageLoader');
-  if (!loader) return;
-  const MIN_SHOW = 400;
+  const veil = document.getElementById('pageVeil');
+  if (!veil) return;
+  const MIN_SHOW = 250;
+  const FADE = 550;
   const startedAt = Date.now();
-  const hide = () => {
+
+  const reveal = () => {
     const remaining = Math.max(0, MIN_SHOW - (Date.now() - startedAt));
-    setTimeout(() => {
-      loader.classList.add('is-hidden');
-      setTimeout(() => {
-        if (loader.parentNode) loader.parentNode.removeChild(loader);
-      }, 550);
-    }, remaining);
+    setTimeout(() => veil.classList.add('is-hidden'), remaining);
   };
-  if (document.readyState === 'complete') hide();
-  else window.addEventListener('load', hide);
+  if (document.readyState === 'complete') reveal();
+  else window.addEventListener('load', reveal);
+
+  // Re-show veil before navigating away on internal link clicks
+  const isInternal = (href) =>
+    href &&
+    !href.startsWith('#') &&
+    !href.startsWith('mailto:') &&
+    !href.startsWith('tel:') &&
+    !href.startsWith('javascript:') &&
+    !/^https?:\/\//i.test(href);
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    if (a.target === '_blank' || a.hasAttribute('download')) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    const href = a.getAttribute('href');
+    if (!isInternal(href)) return;
+    e.preventDefault();
+    veil.classList.remove('is-hidden');
+    setTimeout(() => {
+      window.location.href = href;
+    }, FADE);
+  });
+
+  // Restore veil when navigating back via bfcache
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      veil.classList.add('is-hidden');
+    }
+  });
 })();
 
 // Scroll-driven body background fade (cream -> black)
