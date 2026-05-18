@@ -1541,6 +1541,7 @@ em {
   min-height: 240px;
   overflow: hidden;
   border: 1px solid var(--line);
+  border-radius: 12px;
   box-shadow: 0 18px 40px -18px rgba(15, 17, 18, 0.25);
   transition:
     background 0.25s ease,
