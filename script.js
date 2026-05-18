@@ -58,6 +58,7 @@ hamburger?.addEventListener('click', () => {
   const nextBtn = gallery.querySelector('[data-gallery-next]');
   const indexEl = gallery.querySelector('[data-gallery-index]');
   const totalEl = gallery.querySelector('[data-gallery-total]');
+  const progressEl = gallery.querySelector('[data-gallery-progress]');
   if (!track) return;
   const slides = Array.from(track.children);
   if (!slides.length) return;
@@ -77,6 +78,7 @@ hamburger?.addEventListener('click', () => {
     if (indexEl) indexEl.textContent = String(idx + 1);
     if (prevBtn) prevBtn.disabled = idx === 0;
     if (nextBtn) nextBtn.disabled = idx === slides.length - 1;
+    if (progressEl) progressEl.style.width = ((idx + 1) / slides.length) * 100 + '%';
   };
 
   prevBtn?.addEventListener('click', () => goTo(currentIndex() - 1));
