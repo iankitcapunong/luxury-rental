@@ -22,12 +22,12 @@ hamburger?.addEventListener('click', () => {
   }
 });
 
-// Scroll-reveal for fleet cards and service tiles (bidirectional)
+// Scroll-reveal for fleet gallery, service tiles, cabin items (bidirectional)
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
   const sections = [
-    { sel: '.fleet .card', cols: 2, step: 0.08 },
+    { sel: '.fleet .gallery', cols: 1, step: 0 },
     { sel: '.services .tile', cols: 3, step: 0.1 },
     { sel: '.cabin .cabin__item', cols: 3, step: 0.08 },
   ];
@@ -47,6 +47,52 @@ hamburger?.addEventListener('click', () => {
     }
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach((el) => obs.observe(el));
+})();
+
+// Fleet gallery carousel
+(function () {
+  const gallery = document.querySelector('[data-gallery]');
+  if (!gallery) return;
+  const track = gallery.querySelector('[data-gallery-track]');
+  const prevBtn = gallery.querySelector('[data-gallery-prev]');
+  const nextBtn = gallery.querySelector('[data-gallery-next]');
+  const indexEl = gallery.querySelector('[data-gallery-index]');
+  const totalEl = gallery.querySelector('[data-gallery-total]');
+  if (!track) return;
+  const slides = Array.from(track.children);
+  if (!slides.length) return;
+  if (totalEl) totalEl.textContent = String(slides.length);
+
+  const currentIndex = () => {
+    const w = track.clientWidth;
+    if (!w) return 0;
+    return Math.round(track.scrollLeft / w);
+  };
+  const goTo = (i) => {
+    const clamped = Math.max(0, Math.min(slides.length - 1, i));
+    track.scrollTo({ left: slides[clamped].offsetLeft, behavior: 'smooth' });
+  };
+  const update = () => {
+    const idx = currentIndex();
+    if (indexEl) indexEl.textContent = String(idx + 1);
+    if (prevBtn) prevBtn.disabled = idx === 0;
+    if (nextBtn) nextBtn.disabled = idx === slides.length - 1;
+  };
+
+  prevBtn?.addEventListener('click', () => goTo(currentIndex() - 1));
+  nextBtn?.addEventListener('click', () => goTo(currentIndex() + 1));
+  let scrollRaf = 0;
+  track.addEventListener('scroll', () => {
+    if (scrollRaf) return;
+    scrollRaf = window.requestAnimationFrame(() => {
+      scrollRaf = 0;
+      update();
+    });
+  }, { passive: true });
+  window.addEventListener('resize', () => {
+    goTo(currentIndex());
+  });
+  update();
 })();
 
 // Concierge chat (rule-based FAQ)
