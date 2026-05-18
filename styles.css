@@ -200,7 +200,7 @@ em {
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .nav__menu a {
   font-size: 15px;
