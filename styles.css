@@ -1914,6 +1914,12 @@ em {
 html.page-transition body {
   transition: background-color 0.18s linear;
 }
+html.page-transition .vision-essay,
+html.page-transition .future-essay,
+html.page-transition .cabin,
+html.page-transition .fleet {
+  background: transparent;
+}
 
 /* ---------- Text reveal-up (headings, ledes) ---------- */
 .has-text-reveal .reveal-up {
