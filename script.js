@@ -1,18 +1,50 @@
-// Cabin tile click-to-zoom toggle
+// Cabin tile preview modal
 (function () {
   const items = document.querySelectorAll('.cabin__item');
-  if (!items.length) return;
-  items.forEach((item) => {
-    item.addEventListener('click', () => {
-      const wasActive = item.classList.contains('is-clicked');
-      items.forEach((i) => i.classList.remove('is-clicked'));
-      if (!wasActive) item.classList.add('is-clicked');
-    });
-  });
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.cabin__item')) {
-      items.forEach((i) => i.classList.remove('is-clicked'));
+  const modal = document.querySelector('[data-cabin-modal]');
+  if (!items.length || !modal) return;
+  const img = modal.querySelector('[data-modal-image]');
+  const eyebrow = modal.querySelector('[data-modal-eyebrow]');
+  const title = modal.querySelector('[data-modal-title]');
+  const text = modal.querySelector('[data-modal-text]');
+  let lastFocused = null;
+
+  const open = (item) => {
+    const sourceImg = item.querySelector('.cabin__media img');
+    const sourceEyebrow = item.querySelector('.cabin__eyebrow');
+    const sourceTitle = item.querySelector('h3');
+    const sourceText = item.querySelector('.cabin__body p');
+    if (img && sourceImg) {
+      img.src = sourceImg.currentSrc || sourceImg.src;
+      img.alt = sourceImg.alt || '';
     }
+    if (eyebrow && sourceEyebrow) eyebrow.textContent = sourceEyebrow.textContent;
+    if (title && sourceTitle) title.textContent = sourceTitle.textContent;
+    if (text && sourceText) text.textContent = sourceText.textContent;
+    lastFocused = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.documentElement.style.overflow = 'hidden';
+    const closeBtn = modal.querySelector('.modal__close');
+    if (closeBtn) closeBtn.focus();
+  };
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
+  };
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => open(item));
+  });
+  modal.querySelectorAll('[data-modal-close]').forEach((el) => {
+    el.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
   });
 })();
 
