@@ -26,12 +26,20 @@ hamburger?.addEventListener('click', () => {
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
-  const els = document.querySelectorAll('.fleet .card, .services .tile, .cabin .cabin__item');
+  const sections = [
+    { sel: '.fleet .card', cols: 2, step: 0.08 },
+    { sel: '.services .tile', cols: 3, step: 0.1 },
+    { sel: '.cabin .cabin__item', cols: 3, step: 0.08 },
+  ];
+  const els = [];
+  for (const s of sections) {
+    document.querySelectorAll(s.sel).forEach((el, i) => {
+      el.style.transitionDelay = (i % s.cols) * s.step + 's';
+      els.push(el);
+    });
+  }
   if (!els.length) return;
   document.documentElement.classList.add('has-reveal');
-  els.forEach((el, i) => {
-    el.style.transitionDelay = (i % 5) * 0.08 + 's';
-  });
   const obs = new IntersectionObserver((entries) => {
     for (const e of entries) {
       if (e.isIntersecting) e.target.classList.add('is-revealed');
