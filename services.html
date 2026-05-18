@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury TransportPrivate Chauffeur · UK</title>
+  <title>Services · Luxury Transport</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
       <nav class="nav__menu" aria-label="Primary">
         <ul>
           <li><a href="fleet.html">The Fleet</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="services.html" aria-current="page">Services</a></li>
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -39,51 +39,58 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero__media" aria-hidden="true">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="">
-        <source src="Vid/0514.mp4" type="video/mp4">
-      </video>
+  <!-- Services tiles -->
+  <section class="services" id="services">
+    <div class="container section-head">
+      <p class="eyebrow">Our Services</p>
+      <h2>Considered for every occasion.</h2>
     </div>
-    <div class="hero__veil"></div>
-    <div class="container hero__content">
-      <h1 class="hero__title">Arrive, <em>effortlessly.</em></h1>
-      <p class="hero__lede">A discreet, hand-finished service in marque cars driven by trained, vetted chauffeurs. From the doorsteps of Mayfair, Knightsbridge and Belgravia to the moors beyond. Composed, on time, and entirely yours for the day.</p>
-      <div class="hero__cta">
-        <a href="#book" class="btn btn--primary">Reserve a Journey</a>
-      </div>
-    </div>
-    <div class="hero__scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <span class="line"></span>
-    </div>
-  </section>
-
-  <!-- Reserve CTA -->
-  <section class="reserve" id="book">
-    <div class="container reserve__inner">
-      <div>
-        <p class="eyebrow">Reserve</p>
-        <h2>Begin the conversation.</h2>
-        <p>Tell us the date, the destination, and the mood. We'll reply within the hour with a chauffeur, a marque, and a route.</p>
-      </div>
-      <form class="reserve__form" onsubmit="event.preventDefault(); document.getElementById('reserveOk').hidden=false;">
-        <label>
-          <span>Full name</span>
-          <input type="text" required placeholder="As it appears on your ID" />
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" required placeholder="you@example.co.uk" />
-        </label>
-        <label class="span-2">
-          <span>Tell us about the journey</span>
-          <textarea rows="3" placeholder="Date, time, pickup, destination, occasion"></textarea>
-        </label>
-        <button type="submit" class="btn btn--primary">Request Availability</button>
-        <p id="reserveOk" class="reserve__ok" hidden>Thank youa concierge will be in touch shortly.</p>
-      </form>
+    <div class="container services__grid">
+      <a href="contact.html" class="tile">
+        <div class="tile__media">
+          <img src="Images/airport.png" alt="Chauffeur greeting passenger at the airport beside a Mercedes-Benz Sprinter" loading="lazy">
+        </div>
+        <div class="tile__body">
+          <h3>Airport Transfers</h3>
+          <p>Heathrow, Gatwick, City and Farnborough. Met landside, in advance of you. Reserved exclusively for residents of Mayfair, Knightsbridge and Belgravia.</p>
+        </div>
+      </a>
+      <a href="contact.html" class="tile">
+        <div class="tile__media">
+          <img src="Images/corporate.png" alt="Mercedes-Benz Sprinter chauffeur on corporate hire" loading="lazy">
+        </div>
+        <div class="tile__body">
+          <h3>Corporate Chauffeur</h3>
+          <p>Day-rate retainers for executives and boardrooms, with airport meets and studio runs included. Service reserved exclusively to Mayfair, Knightsbridge and Belgravia.</p>
+        </div>
+      </a>
+      <a href="contact.html" class="tile">
+        <div class="tile__media">
+          <img src="Images/vip_celeb.png" alt="VIP and celebrity transport in a Mercedes-Benz Sprinter" loading="lazy">
+        </div>
+        <div class="tile__body">
+          <h3>VIP &amp; Celebrity</h3>
+          <p>Strict non-disclosure on every assignment. Airport meets, studio runs, and discreet movement across Mayfair, Knightsbridge and Belgravia.</p>
+        </div>
+      </a>
+      <a href="contact.html" class="tile">
+        <div class="tile__media">
+          <img src="Images/wedding.png" alt="Mercedes-Benz Sprinter at a wedding venue" loading="lazy">
+        </div>
+        <div class="tile__body">
+          <h3>Weddings &amp; Events</h3>
+          <p>Ribboned arrivals, calmly-driven exits. Ceremonies and receptions across Mayfair, Knightsbridge and Belgravia, with onward transfers to airport or studio.</p>
+        </div>
+      </a>
+      <a href="contact.html" class="tile">
+        <div class="tile__media">
+          <img src="Images/longride.png" alt="Mercedes-Benz Sprinter on a long-distance journey" loading="lazy">
+        </div>
+        <div class="tile__body">
+          <h3>Long Distance Hire</h3>
+          <p>Door to door from your Mayfair, Knightsbridge or Belgravia address. Composed at motorway pace, to airport, studio, or the country beyond.</p>
+        </div>
+      </a>
     </div>
   </section>
 

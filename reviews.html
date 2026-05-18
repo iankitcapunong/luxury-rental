@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury TransportPrivate Chauffeur · UK</title>
+  <title>Reviews · Luxury Transport</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
         <ul>
           <li><a href="fleet.html">The Fleet</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="reviews.html" aria-current="page">Reviews</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -39,51 +39,32 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero__media" aria-hidden="true">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="">
-        <source src="Vid/0514.mp4" type="video/mp4">
-      </video>
+  <!-- Reviews -->
+  <section class="testimonials" id="reviews">
+    <div class="container section-head">
+      <p class="eyebrow">Reviews</p>
+      <h2>Quietly recommended.</h2>
     </div>
-    <div class="hero__veil"></div>
-    <div class="container hero__content">
-      <h1 class="hero__title">Arrive, <em>effortlessly.</em></h1>
-      <p class="hero__lede">A discreet, hand-finished service in marque cars driven by trained, vetted chauffeurs. From the doorsteps of Mayfair, Knightsbridge and Belgravia to the moors beyond. Composed, on time, and entirely yours for the day.</p>
-      <div class="hero__cta">
-        <a href="#book" class="btn btn--primary">Reserve a Journey</a>
-      </div>
-    </div>
-    <div class="hero__scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <span class="line"></span>
-    </div>
-  </section>
 
-  <!-- Reserve CTA -->
-  <section class="reserve" id="book">
-    <div class="container reserve__inner">
-      <div>
-        <p class="eyebrow">Reserve</p>
-        <h2>Begin the conversation.</h2>
-        <p>Tell us the date, the destination, and the mood. We'll reply within the hour with a chauffeur, a marque, and a route.</p>
-      </div>
-      <form class="reserve__form" onsubmit="event.preventDefault(); document.getElementById('reserveOk').hidden=false;">
-        <label>
-          <span>Full name</span>
-          <input type="text" required placeholder="As it appears on your ID" />
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" required placeholder="you@example.co.uk" />
-        </label>
-        <label class="span-2">
-          <span>Tell us about the journey</span>
-          <textarea rows="3" placeholder="Date, time, pickup, destination, occasion"></textarea>
-        </label>
-        <button type="submit" class="btn btn--primary">Request Availability</button>
-        <p id="reserveOk" class="reserve__ok" hidden>Thank youa concierge will be in touch shortly.</p>
-      </form>
+    <div class="container testimonials__grid">
+      <article class="testimonial">
+        <p class="testimonial__meta">Family Office · Mayfair</p>
+        <h3>Twelve years, never a missed minute.</h3>
+        <p>"Twelve years of daily service, and not once a missed minute. The chauffeurs anticipate the school run, the board meeting, and the quiet between."</p>
+        <cite class="testimonial__cite">A. K., Family Office Principal</cite>
+      </article>
+      <article class="testimonial">
+        <p class="testimonial__meta">Wedding · Knightsbridge</p>
+        <h3>The day arrived as quietly as the cars.</h3>
+        <p>"The day arrived as quietly as the cars themselves. Ribbons tied, guests met, and our exit through London felt entirely private."</p>
+        <cite class="testimonial__cite">H. &amp; E., Knightsbridge</cite>
+      </article>
+      <article class="testimonial">
+        <p class="testimonial__meta">Verified Client · Belgravia</p>
+        <h3>Discretion you only notice in its absence.</h3>
+        <p>"Through three productions and twice as many awards seasons, not a single photograph of our doorstep. Discretion you only notice in its absence."</p>
+        <cite class="testimonial__cite">Name withheld under NDA</cite>
+      </article>
     </div>
   </section>
 
