@@ -26,7 +26,7 @@ hamburger?.addEventListener('click', () => {
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
-  const els = document.querySelectorAll('.fleet .card, .services .tile');
+  const els = document.querySelectorAll('.fleet .card, .services .tile, .cabin .cabin__item');
   if (!els.length) return;
   document.documentElement.classList.add('has-reveal');
   els.forEach((el, i) => {

@@ -1246,7 +1246,8 @@ em {
 
 /* ---------- Scroll reveal (bidirectional) ---------- */
 .has-reveal .fleet .card,
-.has-reveal .services .tile {
+.has-reveal .services .tile,
+.has-reveal .cabin .cabin__item {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -1254,23 +1255,28 @@ em {
     transform 0.7s ease;
 }
 .has-reveal .fleet .card.is-revealed,
-.has-reveal .services .tile.is-revealed {
+.has-reveal .services .tile.is-revealed,
+.has-reveal .cabin .cabin__item.is-revealed {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Fleet cards: horizontal slide in/out (left column from left, right column from right) */
-.has-reveal .fleet .card {
+/* Fleet cards & cabin items: horizontal slide in/out (odd from left, even from right) */
+.has-reveal .fleet .card,
+.has-reveal .cabin .cabin__item {
   transform: translateX(-80px);
   transition:
     opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
     transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.has-reveal .fleet .card:nth-child(even) {
+.has-reveal .fleet .card:nth-child(even),
+.has-reveal .cabin .cabin__item:nth-child(even) {
   transform: translateX(80px);
 }
 .has-reveal .fleet .card.is-revealed,
-.has-reveal .fleet .card:nth-child(even).is-revealed {
+.has-reveal .fleet .card:nth-child(even).is-revealed,
+.has-reveal .cabin .cabin__item.is-revealed,
+.has-reveal .cabin .cabin__item:nth-child(even).is-revealed {
   transform: translateX(0);
 }
 
