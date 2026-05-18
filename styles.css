@@ -312,44 +312,35 @@ em {
   }
 }
 
-/* ---------- Who we've worked with ---------- */
-.wwww {
+/* ---------- About Us (home page) ---------- */
+.about-us {
   background: var(--bg-cream);
   padding-bottom: 120px;
 }
-.wwww__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  max-width: 960px;
+.about-us__body {
+  max-width: 760px;
   margin: 0 auto;
-  padding: 0 32px;
-}
-.wwww__item {
+  padding: 8px 32px 0;
   text-align: center;
-  padding: 28px 24px;
-  border-top: 1px solid var(--line);
 }
-.wwww__role {
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  margin: 0 0 14px;
+.about-us__body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
 }
-.wwww__quote {
-  font-family: var(--serif);
-  font-size: 22px;
-  line-height: 1.4;
-  color: var(--ink);
-  margin: 0;
+.about-us__body p:last-child {
+  margin-bottom: 0;
 }
 @media (max-width: 720px) {
-  .wwww__grid {
-    grid-template-columns: 1fr;
-  }
-  .wwww {
+  .about-us {
     padding-bottom: 80px;
+  }
+  .about-us__body {
+    padding: 0 20px;
+  }
+  .about-us__body p {
+    font-size: 16px;
   }
 }
 
@@ -659,10 +650,11 @@ em {
   margin: 0 auto;
   padding: 140px 32px 64px;
 }
-.vision-essay__intro h2 {
+.vision-essay__intro h2,
+.vision-essay__panel h3 {
   color: #fff;
 }
-.vision-essay__intro .eyebrow {
+.vision-essay__panel .eyebrow {
   color: rgba(255, 255, 255, 0.65);
 }
 .vision-essay__lede {
@@ -670,30 +662,56 @@ em {
   font-size: 17px;
   line-height: 1.7;
 }
-.vision-essay__body {
-  max-width: 760px;
+.vision-essay__grid {
+  max-width: 980px;
   margin: 0 auto;
-  padding: 16px 32px 32px;
+  padding: 16px 32px 40px;
+  display: grid;
+  gap: 72px;
+}
+.vision-essay__panel {
   text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
-.vision-essay__body p {
-  font-size: 17px;
+.vision-essay__panel h3 {
+  font-size: 30px;
+  margin: 0 0 18px;
+  line-height: 1.25;
+}
+.vision-essay__panel p {
+  font-size: 16px;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.84);
-  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
 }
-.vision-essay__body p:last-child {
-  margin-bottom: 0;
+.vision-essay__quote {
+  text-align: center;
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding: 24px 32px 0;
+}
+.vision-essay__quote p {
+  font-size: 30px;
+  line-height: 1.3;
+  font-style: italic;
+  color: #fff;
+  font-family: var(--serif);
+  margin: 0;
 }
 @media (max-width: 720px) {
   .vision-essay__intro {
-    padding: 88px 20px 32px;
+    padding: 88px 20px 40px;
   }
-  .vision-essay__body {
-    padding: 8px 20px 24px;
+  .vision-essay__grid {
+    gap: 56px;
+    padding: 8px 20px 32px;
   }
-  .vision-essay__body p {
-    font-size: 16px;
+  .vision-essay__panel h3 {
+    font-size: 24px;
+  }
+  .vision-essay__quote p {
+    font-size: 24px;
   }
 }
 
