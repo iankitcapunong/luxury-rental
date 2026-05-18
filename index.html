@@ -43,8 +43,11 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero__media" aria-hidden="true">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="">
+    <div class="hero__media" aria-hidden="true" data-hero-video>
+      <video class="hero__video hero__video--a is-active" autoplay muted playsinline preload="auto" poster="">
+        <source src="Vid/herosection.mp4" type="video/mp4">
+      </video>
+      <video class="hero__video hero__video--b" muted playsinline preload="auto">
         <source src="Vid/herosection.mp4" type="video/mp4">
       </video>
     </div>

@@ -1,3 +1,42 @@
+// Hero video crossfade loop (two stacked videos)
+(function () {
+  const wrap = document.querySelector('[data-hero-video]');
+  if (!wrap) return;
+  const a = wrap.querySelector('.hero__video--a');
+  const b = wrap.querySelector('.hero__video--b');
+  if (!a || !b) return;
+  const FADE = 0.9;
+  let active = a;
+  let queued = b;
+  let crossfading = false;
+
+  const onTime = () => {
+    if (crossfading) return;
+    const d = active.duration;
+    if (!d || isNaN(d)) return;
+    if (d - active.currentTime > FADE) return;
+    crossfading = true;
+    queued.currentTime = 0;
+    const playPromise = queued.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+    active.classList.remove('is-active');
+    queued.classList.add('is-active');
+    const previous = active;
+    active = queued;
+    queued = previous;
+    setTimeout(() => {
+      queued.pause();
+      queued.currentTime = 0;
+      crossfading = false;
+    }, FADE * 1000 + 60);
+  };
+
+  a.addEventListener('timeupdate', onTime);
+  b.addEventListener('timeupdate', onTime);
+})();
+
 // Sticky nav state on scroll
 const nav = document.getElementById('siteNav');
 const onScroll = () => {
