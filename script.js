@@ -6,21 +6,18 @@
   const img = modal.querySelector('[data-modal-image]');
   const eyebrow = modal.querySelector('[data-modal-eyebrow]');
   const title = modal.querySelector('[data-modal-title]');
-  const text = modal.querySelector('[data-modal-text]');
   let lastFocused = null;
 
   const open = (item) => {
     const sourceImg = item.querySelector('.cabin__media img');
     const sourceEyebrow = item.querySelector('.cabin__eyebrow');
     const sourceTitle = item.querySelector('h3');
-    const sourceText = item.querySelector('.cabin__body p');
     if (img && sourceImg) {
       img.src = sourceImg.currentSrc || sourceImg.src;
       img.alt = sourceImg.alt || '';
     }
     if (eyebrow && sourceEyebrow) eyebrow.textContent = sourceEyebrow.textContent;
     if (title && sourceTitle) title.textContent = sourceTitle.textContent;
-    if (text && sourceText) text.textContent = sourceText.textContent;
     lastFocused = document.activeElement;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');

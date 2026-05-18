@@ -261,24 +261,21 @@
     </div>
   </footer>
 
-  <!-- Cabin preview modal -->
+  <!-- Cabin image viewer -->
   <div class="modal" id="cabinModal" aria-hidden="true" data-cabin-modal>
     <div class="modal__backdrop" data-modal-close></div>
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="cabinModalTitle">
-      <button class="modal__close" type="button" aria-label="Close preview" data-modal-close>
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M6 6l12 12M18 6l-12 12" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="modal__media">
-        <img data-modal-image alt="" />
-      </div>
-      <div class="modal__body">
-        <p class="modal__eyebrow" data-modal-eyebrow></p>
-        <h3 id="cabinModalTitle" data-modal-title></h3>
-        <p data-modal-text></p>
-      </div>
-    </div>
+    <button class="modal__close" type="button" aria-label="Close preview" data-modal-close>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M6 6l12 12M18 6l-12 12" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <figure class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="cabinModalTitle">
+      <img data-modal-image alt="" />
+      <figcaption class="modal__caption">
+        <span class="modal__eyebrow" data-modal-eyebrow></span>
+        <span class="modal__title" id="cabinModalTitle" data-modal-title></span>
+      </figcaption>
+    </figure>
   </div>
 
   <button class="chat-toggle" id="chatToggle" aria-label="Open concierge chat" aria-expanded="false">
