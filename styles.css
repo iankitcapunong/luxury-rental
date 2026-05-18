@@ -255,7 +255,18 @@ em {
 
 /* ---------- Inside the Cabin ---------- */
 .cabin {
-  background: var(--bg);
+  background: #0a0d0f;
+  color: #fff;
+}
+.cabin .section-head h2,
+.cabin .section-head .eyebrow {
+  color: #fff;
+}
+.cabin .section-head .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+.cabin .section-head__lede {
+  color: rgba(255, 255, 255, 0.78);
 }
 .cabin__grid {
   display: grid;
@@ -266,26 +277,27 @@ em {
   margin: 0 auto;
 }
 .cabin__item {
-  background: var(--bg-cream);
+  background: rgba(255, 255, 255, 0.04);
   padding: 32px 28px;
   text-align: center;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 .cabin__eyebrow {
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-mute);
+  color: rgba(255, 255, 255, 0.6);
   margin: 0 0 12px;
 }
 .cabin__item h3 {
   font-size: 22px;
   margin: 0 0 12px;
+  color: #fff;
 }
 .cabin__item p {
   font-size: 15px;
   margin: 0;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.78);
 }
 @media (max-width: 1080px) {
   .cabin__grid {
