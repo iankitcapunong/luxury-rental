@@ -1647,8 +1647,8 @@ em {
 #cabin *,
 #services,
 #services *,
-#wwww,
-#wwww *,
+#about,
+#about *,
 #book,
 #book * {
   font-family: var(--serif);
