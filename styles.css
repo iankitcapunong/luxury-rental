@@ -640,6 +640,212 @@ em {
   }
 }
 
+/* ---------- Future page editorial (dark theme) ---------- */
+.future-essay {
+  background: #0a0d0f;
+  color: #fff;
+  padding-bottom: 140px;
+  font-family: var(--serif);
+}
+.future-essay__intro {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 140px 32px 24px;
+}
+.future-essay__intro h2 {
+  color: #fff;
+  font-size: 44px;
+  margin: 18px 0 28px;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.future-essay__intro .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
+}
+.future-essay__lede {
+  color: rgba(255, 255, 255, 0.84);
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.future-timeline {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 96px 32px 24px;
+  display: grid;
+  gap: 56px;
+}
+.future-timeline__phase {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 56px;
+  align-items: start;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.future-timeline__phase:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.future-timeline__marker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.future-timeline__years {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+.future-timeline__phase-name {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+}
+.future-timeline__body h3 {
+  color: #fff;
+  font-size: 28px;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+.future-timeline__body p {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.future-ambitions__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 32px 28px;
+}
+.future-ambitions__head .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
+}
+.future-ambitions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.future-ambition {
+  padding: 36px 32px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.future-ambition:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.26);
+  transform: translateY(-3px);
+}
+.future-ambition h4 {
+  font-family: var(--serif);
+  font-size: 24px;
+  color: #fff;
+  margin: 0 0 14px;
+  letter-spacing: -0.005em;
+}
+.future-ambition p {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.future-commitment {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 96px 32px 0;
+}
+.future-commitment .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 28px;
+}
+.future-commitment__statement {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+  font-weight: 400;
+}
+@media (max-width: 1080px) {
+  .future-timeline__phase {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-bottom: 48px;
+  }
+  .future-timeline__phase-name {
+    font-size: 30px;
+  }
+}
+@media (max-width: 720px) {
+  .future-essay {
+    padding-bottom: 96px;
+  }
+  .future-essay__intro {
+    padding: 88px 20px 16px;
+  }
+  .future-essay__intro h2 {
+    font-size: 30px;
+  }
+  .future-essay__lede {
+    font-size: 18px;
+  }
+  .future-timeline {
+    padding: 64px 20px 8px;
+    gap: 40px;
+  }
+  .future-timeline__phase {
+    gap: 14px;
+    padding-bottom: 40px;
+  }
+  .future-timeline__phase-name {
+    font-size: 26px;
+  }
+  .future-timeline__body h3 {
+    font-size: 22px;
+  }
+  .future-timeline__body p {
+    font-size: 16px;
+  }
+  .future-ambitions {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 20px;
+  }
+  .future-ambitions__head {
+    padding: 48px 20px 20px;
+  }
+  .future-ambition {
+    padding: 28px 24px;
+  }
+  .future-commitment {
+    padding: 72px 20px 0;
+  }
+  .future-commitment__statement {
+    font-size: 20px;
+  }
+}
+
 /* ---------- Vision page essay (dark theme) ---------- */
 .vision-essay {
   background: #0a0d0f;
