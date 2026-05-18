@@ -287,10 +287,14 @@ em {
     box-shadow 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
     border-color 0.5s ease;
 }
-.cabin__item:hover {
+.cabin__item:hover,
+.cabin__item.is-clicked {
   transform: translateY(-10px);
   border-color: rgba(255, 255, 255, 0.28);
   box-shadow: 0 28px 60px -20px rgba(0, 0, 0, 0.55);
+}
+.cabin__item {
+  cursor: pointer;
 }
 .cabin__media {
   width: 100%;
@@ -305,7 +309,8 @@ em {
   display: block;
   transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.cabin__item:hover .cabin__media img {
+.cabin__item:hover .cabin__media img,
+.cabin__item.is-clicked .cabin__media img {
   transform: scale(1.08);
 }
 .cabin__body {

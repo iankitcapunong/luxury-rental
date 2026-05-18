@@ -1,3 +1,21 @@
+// Cabin tile click-to-zoom toggle
+(function () {
+  const items = document.querySelectorAll('.cabin__item');
+  if (!items.length) return;
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      const wasActive = item.classList.contains('is-clicked');
+      items.forEach((i) => i.classList.remove('is-clicked'));
+      if (!wasActive) item.classList.add('is-clicked');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.cabin__item')) {
+      items.forEach((i) => i.classList.remove('is-clicked'));
+    }
+  });
+})();
+
 // Hero video crossfade loop (two stacked videos)
 (function () {
   const wrap = document.querySelector('[data-hero-video]');
