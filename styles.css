@@ -616,7 +616,7 @@ em {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   color: #fff;
