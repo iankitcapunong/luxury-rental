@@ -1899,6 +1899,61 @@ em {
   }
 }
 
+/* ---------- Page skeleton loader ---------- */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #faf8f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.page-loader.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.page-loader__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(440px, 72vw);
+}
+.page-loader__bar {
+  height: 14px;
+  border-radius: 6px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(26, 24, 22, 0.06) 0%,
+      rgba(26, 24, 22, 0.18) 50%,
+      rgba(26, 24, 22, 0.06) 100%
+    );
+  background-size: 200% 100%;
+  animation: pageLoaderShimmer 1.4s ease-in-out infinite;
+}
+.page-loader__bar--lg {
+  height: 22px;
+  width: 100%;
+}
+.page-loader__bar--md {
+  width: 86%;
+}
+.page-loader__bar--sm {
+  width: 54%;
+}
+@keyframes pageLoaderShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 /* ---------- Page background scroll fade ---------- */
 html.page-transition body {
   transition: background-color 0.18s linear;

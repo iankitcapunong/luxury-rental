@@ -1,3 +1,22 @@
+// Page skeleton loader — hide after load with a minimum visible duration
+(function () {
+  const loader = document.getElementById('pageLoader');
+  if (!loader) return;
+  const MIN_SHOW = 400;
+  const startedAt = Date.now();
+  const hide = () => {
+    const remaining = Math.max(0, MIN_SHOW - (Date.now() - startedAt));
+    setTimeout(() => {
+      loader.classList.add('is-hidden');
+      setTimeout(() => {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 550);
+    }, remaining);
+  };
+  if (document.readyState === 'complete') hide();
+  else window.addEventListener('load', hide);
+})();
+
 // Scroll-driven body background fade (cream -> black)
 (function () {
   if (!document.documentElement.classList.contains('page-transition')) return;
