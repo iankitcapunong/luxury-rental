@@ -1,3 +1,61 @@
+// Scroll-driven body background fade (cream -> black)
+(function () {
+  if (!document.documentElement.classList.contains('page-transition')) return;
+  const start = [241, 236, 226]; // --bg cream
+  const end = [10, 13, 15];      // near-black
+  const body = document.body;
+  let raf = 0;
+  const update = () => {
+    raf = 0;
+    const max = Math.max(1, window.innerHeight * 0.9);
+    const t = Math.min(1, Math.max(0, window.scrollY / max));
+    const c = start.map((s, i) => Math.round(s + (end[i] - s) * t));
+    body.style.backgroundColor = `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
+  };
+  const onScroll = () => {
+    if (raf) return;
+    raf = window.requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// Text reveal on scroll (headings, ledes, paragraphs)
+(function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+  const selector = [
+    '.section-head .eyebrow',
+    '.section-head h2',
+    '.section-head__lede',
+    '.vision-essay__statement .eyebrow',
+    '.vision-essay__manifesto',
+    '.future-essay__intro .eyebrow',
+    '.future-essay__intro h2',
+    '.future-essay__lede',
+    '.future-timeline__phase',
+    '.future-ambitions__head .eyebrow',
+    '.future-commitment .eyebrow',
+    '.future-commitment__statement',
+    '.about-us__body p',
+  ].join(', ');
+  const els = document.querySelectorAll(selector);
+  if (!els.length) return;
+  document.documentElement.classList.add('has-text-reveal');
+  els.forEach((el, i) => {
+    el.classList.add('reveal-up');
+    el.style.transitionDelay = (i % 4) * 0.06 + 's';
+  });
+  const obs = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) e.target.classList.add('is-revealed');
+      else e.target.classList.remove('is-revealed');
+    }
+  }, { threshold: 0.18, rootMargin: '0px 0px -10% 0px' });
+  els.forEach((el) => obs.observe(el));
+})();
+
 // Cabin tile preview modal
 (function () {
   const items = document.querySelectorAll('.cabin__item');
