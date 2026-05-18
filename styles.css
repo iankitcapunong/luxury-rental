@@ -281,6 +281,7 @@ em {
   padding: 0;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
   overflow: hidden;
   transition:
     transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -356,6 +357,7 @@ em {
   max-height: 78vh;
   object-fit: contain;
   display: block;
+  border-radius: 12px;
 }
 .modal__caption {
   display: flex;
