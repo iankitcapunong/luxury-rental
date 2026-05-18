@@ -1259,6 +1259,21 @@ em {
   transform: translateY(0);
 }
 
+/* Fleet cards: horizontal slide in/out (left column from left, right column from right) */
+.has-reveal .fleet .card {
+  transform: translateX(-80px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.has-reveal .fleet .card:nth-child(even) {
+  transform: translateX(80px);
+}
+.has-reveal .fleet .card.is-revealed,
+.has-reveal .fleet .card:nth-child(even).is-revealed {
+  transform: translateX(0);
+}
+
 /* ---------- Section-scoped serif (hero through reserve) ---------- */
 .hero,
 .hero *,
