@@ -699,7 +699,7 @@ em {
 /* ---------- Fleet ---------- */
 .fleet {
   background: var(--bg);
-  padding-bottom: 120px;
+  padding-bottom: 48px;
 }
 .fleet__grid {
   display: grid;
