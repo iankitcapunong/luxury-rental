@@ -12,7 +12,7 @@
   --hero-2: #1a1614;
   --max: 1320px;
   --serif: "Cormorant Garamond", "Times New Roman", serif;
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Cormorant Garamond", "Times New Roman", serif;
   --shadow-card:
     0 1px 0 rgba(26, 24, 22, 0.04), 0 24px 40px -28px rgba(26, 24, 22, 0.18);
 }
@@ -1951,7 +1951,7 @@ html.page-transition body {
   transform: translate(80px, 0);
 }
 
-/* Services: per-row stagger — col 1 from left, col 2 from below, col 3 from right */
+/* Services: per-row stagger, col 1 from left, col 2 from below, col 3 from right */
 .has-reveal .services .tile:nth-child(3n + 1) {
   transform: translate(-80px, 0);
 }
