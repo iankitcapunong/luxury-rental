@@ -53,9 +53,9 @@
   let raf = 0;
   const update = () => {
     raf = 0;
-    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const max = Math.max(1, window.innerHeight * 0.8);
     const raw = Math.min(1, Math.max(0, window.scrollY / max));
-    const t = 1 - Math.pow(1 - raw, 1.6);
+    const t = 1 - Math.pow(1 - raw, 2);
     const c = start.map((s, i) => Math.round(s + (end[i] - s) * t));
     body.style.backgroundColor = `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
   };
