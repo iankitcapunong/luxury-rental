@@ -578,6 +578,9 @@ em {
 .hero.hero--left {
   align-items: flex-end;
 }
+.hero.hero--left .hero__video {
+  object-fit: contain;
+}
 .hero.hero--left .hero__content {
   margin: 0;
   text-align: left;
