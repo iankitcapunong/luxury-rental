@@ -203,7 +203,7 @@ em {
   justify-content: center;
 }
 .nav__menu a {
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink);
@@ -228,18 +228,6 @@ em {
   align-items: center;
   gap: 12px;
 }
-.nav__cta {
-  display: inline-flex;
-  padding: 10px 22px;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-}
-@media (max-width: 1080px) {
-  .nav__cta {
-    display: none;
-  }
-}
-
 /* ---------- Emblem watermark ---------- */
 .emblem-mark {
   display: block;
