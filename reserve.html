@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reviews · Luxury Transport</title>
+  <title>Reserve · Luxury Transport</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,10 +24,11 @@
 
       <nav class="nav__menu" aria-label="Primary">
         <ul>
+          <li><a href="vision.html">The Vision</a></li>
           <li><a href="fleet.html">The Fleet</a></li>
+          <li><a href="cabin.html">Inside the Cabin</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="reviews.html" aria-current="page">Reviews</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reserve.html" aria-current="page">Reserve</a></li>
         </ul>
       </nav>
 
@@ -39,32 +40,30 @@
     </div>
   </header>
 
-  <!-- Reviews -->
-  <section class="testimonials" id="reviews">
-    <div class="container section-head">
-      <p class="eyebrow">Reviews</p>
-      <h2>Quietly recommended.</h2>
-    </div>
-
-    <div class="container testimonials__grid">
-      <article class="testimonial">
-        <p class="testimonial__meta">Family Office · Mayfair</p>
-        <h3>Twelve years, never a missed minute.</h3>
-        <p>"Twelve years of daily service, and not once a missed minute. The chauffeurs anticipate the school run, the board meeting, and the quiet between."</p>
-        <cite class="testimonial__cite">A. K., Family Office Principal</cite>
-      </article>
-      <article class="testimonial">
-        <p class="testimonial__meta">Wedding · Knightsbridge</p>
-        <h3>The day arrived as quietly as the cars.</h3>
-        <p>"The day arrived as quietly as the cars themselves. Ribbons tied, guests met, and our exit through London felt entirely private."</p>
-        <cite class="testimonial__cite">H. &amp; E., Knightsbridge</cite>
-      </article>
-      <article class="testimonial">
-        <p class="testimonial__meta">Verified Client · Belgravia</p>
-        <h3>Discretion you only notice in its absence.</h3>
-        <p>"Through three productions and twice as many awards seasons, not a single photograph of our doorstep. Discretion you only notice in its absence."</p>
-        <cite class="testimonial__cite">Name withheld under NDA</cite>
-      </article>
+  <!-- Reserve -->
+  <section class="reserve" id="book">
+    <div class="container reserve__inner">
+      <div>
+        <p class="eyebrow">Reserve</p>
+        <h2>Begin the conversation.</h2>
+        <p>Tell us the date, the destination, and the mood. We'll reply within the hour with a chauffeur, a marque, and a route.</p>
+      </div>
+      <form class="reserve__form" onsubmit="event.preventDefault(); document.getElementById('reserveOk').hidden=false;">
+        <label>
+          <span>Full name</span>
+          <input type="text" required placeholder="As it appears on your ID" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" required placeholder="you@example.co.uk" />
+        </label>
+        <label class="span-2">
+          <span>Tell us about the journey</span>
+          <textarea rows="3" placeholder="Date, time, pickup, destination, occasion"></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary">Request Availability</button>
+        <p id="reserveOk" class="reserve__ok" hidden>Thank youa concierge will be in touch shortly.</p>
+      </form>
     </div>
   </section>
 

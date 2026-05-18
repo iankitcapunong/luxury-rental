@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury TransportPrivate Chauffeur · UK</title>
+  <title>The Vision · Luxury Transport</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 
       <nav class="nav__menu" aria-label="Primary">
         <ul>
-          <li><a href="vision.html">The Vision</a></li>
+          <li><a href="vision.html" aria-current="page">The Vision</a></li>
           <li><a href="fleet.html">The Fleet</a></li>
           <li><a href="cabin.html">Inside the Cabin</a></li>
           <li><a href="services.html">Services</a></li>
@@ -40,53 +40,55 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero__media" aria-hidden="true">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="">
-        <source src="Vid/0514.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="hero__veil"></div>
-    <div class="container hero__content">
-      <h1 class="hero__title">Arrive, <em>effortlessly.</em></h1>
-      <p class="hero__lede">A discreet, hand-finished service in marque cars driven by trained, vetted chauffeurs. From the doorsteps of Mayfair, Knightsbridge and Belgravia to the moors beyond. Composed, on time, and entirely yours for the day.</p>
-      <div class="hero__cta">
-        <a href="#book" class="btn btn--primary">Reserve a Journey</a>
-      </div>
-    </div>
-    <div class="hero__scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <span class="line"></span>
+  <!-- The Vision (placeholder) -->
+  <section class="reserve" id="vision" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="container section-head" style="margin: 0 auto; text-align: center; padding-bottom: 120px;">
+      <p class="eyebrow">The Vision</p>
+      <h2>A house built for the way you move.</h2>
+      <p class="section-head__lede">A manifesto is being written for this page. Returning shortly with the long view.</p>
     </div>
   </section>
 
-  <!-- Reserve CTA -->
-  <section class="reserve" id="book">
-    <div class="container reserve__inner">
-      <div>
-        <p class="eyebrow">Reserve</p>
-        <h2>Begin the conversation.</h2>
-        <p>Tell us the date, the destination, and the mood. We'll reply within the hour with a chauffeur, a marque, and a route.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <span class="brand__mark brand__mark--lg">LT</span>
+        <p class="footer__tag">Luxury TransportPrivate Chauffeur · UK</p>
+        <p class="footer__address">12 Halkin Mews · Belgravia · London SW1X<br/>+44 (0)20 7946 0814 · concierge@luxurytransport.example</p>
       </div>
-      <form class="reserve__form" onsubmit="event.preventDefault(); document.getElementById('reserveOk').hidden=false;">
-        <label>
-          <span>Full name</span>
-          <input type="text" required placeholder="As it appears on your ID" />
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" required placeholder="you@example.co.uk" />
-        </label>
-        <label class="span-2">
-          <span>Tell us about the journey</span>
-          <textarea rows="3" placeholder="Date, time, pickup, destination, occasion"></textarea>
-        </label>
-        <button type="submit" class="btn btn--primary">Request Availability</button>
-        <p id="reserveOk" class="reserve__ok" hidden>Thank youa concierge will be in touch shortly.</p>
-      </form>
+
+      <div class="footer__cols">
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Airport</a></li>
+            <li><a href="services.html">Corporate</a></li>
+            <li><a href="services.html">Weddings</a></li>
+            <li><a href="services.html">Touring</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+442000000000">+44 (0)20 0000 0000</a></li>
+            <li><a href="mailto:bookings@luxurytransport.co.uk">bookings@luxurytransport.co.uk</a></li>
+            <li>London · Manchester</li>
+            <li>Birmingham · Edinburgh</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <div class="container footer__bottom">
+      <p>© 2026 Luxury Transport Ltd. Registered in England &amp; Wales. PHV operator licence 008641.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+  </footer>
 
   <button class="chat-toggle" id="chatToggle" aria-label="Open concierge chat" aria-expanded="false">
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
