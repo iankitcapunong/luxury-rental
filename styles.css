@@ -205,9 +205,9 @@ em {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.96);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   padding: 56px 40px 40px;
   opacity: 0;
   pointer-events: none;
@@ -231,13 +231,14 @@ em {
 }
 .nav__menu a {
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 25px;
   letter-spacing: 0.02em;
   color: #fff;
   padding: 6px 0;
   text-transform: none;
   display: inline-block;
   border-bottom: none;
+  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.5);
 }
 .nav__menu a:hover,
 .nav__menu a:focus-visible {
@@ -253,7 +254,7 @@ em {
     padding: 40px 24px 32px;
   }
   .nav__menu a {
-    font-size: 26px;
+    font-size: 21px;
   }
 }
 .nav__actions {
