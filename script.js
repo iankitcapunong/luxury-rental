@@ -44,30 +44,6 @@
   });
 })();
 
-// Scroll-driven body background fade (cream -> black)
-(function () {
-  if (!document.documentElement.classList.contains('page-transition')) return;
-  const start = [241, 236, 226]; // --bg cream
-  const end = [10, 13, 15];      // near-black
-  const body = document.body;
-  let raf = 0;
-  const update = () => {
-    raf = 0;
-    const max = Math.max(1, window.innerHeight * 1.4);
-    const raw = Math.min(1, Math.max(0, window.scrollY / max));
-    const t = 1 - Math.pow(1 - raw, 1.5);
-    const c = start.map((s, i) => Math.round(s + (end[i] - s) * t));
-    body.style.backgroundColor = `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
-  };
-  const onScroll = () => {
-    if (raf) return;
-    raf = window.requestAnimationFrame(update);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', update);
-  update();
-})();
-
 // Text reveal on scroll (headings, ledes, paragraphs)
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

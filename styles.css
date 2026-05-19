@@ -773,10 +773,10 @@ em {
   }
 }
 
-/* ---------- Future page editorial (dark theme) ---------- */
+/* ---------- Future page editorial (cream theme) ---------- */
 .future-essay {
-  background: #0a0d0f;
-  color: #fff;
+  background: var(--bg);
+  color: var(--ink);
   padding-bottom: 140px;
   font-family: var(--serif);
 }
@@ -787,17 +787,17 @@ em {
   padding: 140px 32px 24px;
 }
 .future-essay__intro h2 {
-  color: #fff;
+  color: var(--ink);
   font-size: 44px;
   margin: 18px 0 28px;
   letter-spacing: -0.01em;
   line-height: 1.1;
 }
 .future-essay__intro .eyebrow {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--ink-mute);
 }
 .future-essay__lede {
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--ink-soft);
   font-family: var(--serif);
   font-size: 21px;
   line-height: 1.65;
@@ -817,7 +817,7 @@ em {
   gap: 56px;
   align-items: start;
   padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid var(--line);
 }
 .future-timeline__phase:last-child {
   border-bottom: none;
@@ -833,23 +833,23 @@ em {
   font-size: 11px;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--ink-mute);
 }
 .future-timeline__phase-name {
   font-family: var(--serif);
   font-size: 36px;
-  color: #fff;
+  color: var(--ink);
   line-height: 1.05;
   letter-spacing: -0.005em;
 }
 .future-timeline__body h3 {
-  color: #fff;
+  color: var(--ink);
   font-size: 28px;
   margin: 0 0 16px;
   line-height: 1.2;
 }
 .future-timeline__body p {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--ink-soft);
   font-family: var(--serif);
   font-size: 18px;
   line-height: 1.7;
@@ -863,7 +863,7 @@ em {
   padding: 72px 32px 28px;
 }
 .future-ambitions__head .eyebrow {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--ink-mute);
 }
 .future-ambitions {
   display: grid;
@@ -875,27 +875,27 @@ em {
 }
 .future-ambition {
   padding: 36px 32px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--bg-cream);
+  border: 1px solid var(--line);
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
     transform 0.3s ease;
 }
 .future-ambition:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.26);
+  background: var(--bg-light);
+  border-color: rgba(26, 24, 22, 0.32);
   transform: translateY(-3px);
 }
 .future-ambition h4 {
   font-family: var(--serif);
   font-size: 24px;
-  color: #fff;
+  color: var(--ink);
   margin: 0 0 14px;
   letter-spacing: -0.005em;
 }
 .future-ambition p {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--ink-soft);
   font-family: var(--serif);
   font-size: 16px;
   line-height: 1.7;
@@ -909,14 +909,14 @@ em {
   padding: 96px 32px 0;
 }
 .future-commitment .eyebrow {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--ink-mute);
   margin: 0 0 28px;
 }
 .future-commitment__statement {
   font-family: var(--serif);
   font-size: 26px;
   line-height: 1.5;
-  color: #fff;
+  color: var(--ink);
   margin: 0;
   font-weight: 400;
 }
@@ -979,10 +979,10 @@ em {
   }
 }
 
-/* ---------- Vision page essay (dark theme) ---------- */
+/* ---------- Vision page essay (cream theme) ---------- */
 .vision-essay {
-  background: #0a0d0f;
-  color: #fff;
+  background: var(--bg);
+  color: var(--ink);
   padding: 0 0 120px;
 }
 .vision-essay__intro {
@@ -998,14 +998,14 @@ em {
   text-align: center;
 }
 .vision-essay__statement .eyebrow {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--ink-mute);
   margin-bottom: 32px;
 }
 .vision-essay__manifesto {
   font-family: var(--serif);
   font-size: 34px;
   line-height: 1.4;
-  color: #fff;
+  color: var(--ink);
   font-weight: 400;
   margin: 0;
   letter-spacing: -0.005em;
@@ -1912,18 +1912,6 @@ em {
 .page-transition-veil.is-hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-/* ---------- Page background scroll fade ---------- */
-html.page-transition body {
-  transition: background-color 0.18s linear;
-}
-html.page-transition .vision-essay,
-html.page-transition .future-essay,
-html.page-transition .cabin,
-html.page-transition .fleet,
-html.page-transition .services {
-  background: transparent;
 }
 
 /* ---------- Text reveal-up (headings, ledes) ---------- */
