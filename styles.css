@@ -1171,8 +1171,8 @@ em {
   color: #fff;
 }
 .gallery__eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.26em;
+  font-size: 15px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
   margin: 0 0 14px;
@@ -1186,7 +1186,7 @@ em {
 }
 .gallery__desc {
   color: rgba(255, 255, 255, 0.86);
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.65;
   margin: 0;
   max-width: 520px;
