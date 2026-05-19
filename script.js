@@ -341,6 +341,7 @@ hamburger?.addEventListener('click', () => {
     { label: 'Booking', topicId: 'booking' }
   ];
   const greeting = "Good day. I attend to bookings, routes, and anything else.";
+  const tagline = "Move in silence. Discretion is our policy.";
   const fallback = "I don't have a direct answer for that. Please use the Reserve form below, or email bookings@luxurytransport.co.uk and a concierge will be in touch within the hour.";
 
   const toggle = document.getElementById('chatToggle');
@@ -399,6 +400,11 @@ hamburger?.addEventListener('click', () => {
     toggle.setAttribute('aria-expanded', 'true');
     if (!log.dataset.seeded) {
       append(greeting, 'bot');
+      const tag = document.createElement('div');
+      tag.className = 'chat__msg chat__msg--tagline';
+      tag.textContent = tagline;
+      log.appendChild(tag);
+      log.scrollTop = log.scrollHeight;
       log.dataset.seeded = '1';
     }
     setTimeout(() => input.focus(), 200);

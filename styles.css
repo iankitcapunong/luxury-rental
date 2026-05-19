@@ -1,15 +1,15 @@
 /* ---------- Tokens ---------- */
 :root {
-  --bg: #ffffff; /* pure white background */
-  --bg-cream: #ffffff; /* unified — no tonal stripe */
-  --bg-light: #ffffff; /* unified */
-  --ink: #000000; /* pure black */
-  --ink-soft: #1a1a1a;
-  --ink-mute: #666666;
-  --line: rgba(0, 0, 0, 0.15); /* hairline */
-  --accent: #000000; /* B&W accent */
-  --hero-1: #000000;
-  --hero-2: #000000;
+  --bg: #f1ece2; /* warm Bentley cream */
+  --bg-cream: #ebe6da; /* slightly deeper cream for striped sections */
+  --bg-light: #faf8f3; /* off-white for cards / forms */
+  --ink: #1a1816; /* near-black body text */
+  --ink-soft: #2d2a26;
+  --ink-mute: #4a4640;
+  --line: rgba(26, 24, 22, 0.18); /* hairline */
+  --accent: #2d1b4e; /* deep purple, used sparingly */
+  --hero-1: #11181c;
+  --hero-2: #1a1614;
   --max: 1320px;
   --serif: "Cormorant Garamond", "Times New Roman", serif;
   --sans: "Cormorant Garamond", "Times New Roman", serif;
@@ -257,6 +257,35 @@ em {
   user-select: none;
 }
 
+/* ---------- The first vehicle (Mercedes Sprinter placeholder) ---------- */
+.first-vehicle {
+  margin: 56px auto 0;
+  max-width: 1100px;
+  padding: 0 32px;
+  text-align: center;
+}
+.first-vehicle__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+.first-vehicle__caption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-mute);
+  margin-top: 18px;
+}
+@media (max-width: 720px) {
+  .first-vehicle {
+    padding: 0 20px;
+  }
+  .first-vehicle__caption {
+    font-size: 14px;
+  }
+}
+
 /* ---------- Inside the Cabin ---------- */
 .cabin {
   background: #000;
@@ -468,6 +497,111 @@ em {
   }
   .cabin__item h3 {
     font-size: 20px;
+  }
+}
+
+/* ---------- Three things we never break ---------- */
+.three-things {
+  background: var(--bg);
+  padding: 96px 0;
+  text-align: center;
+}
+.three-things .eyebrow {
+  margin-bottom: 32px;
+}
+.three-things__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+.three-things__grid span {
+  padding: 0 36px;
+  position: relative;
+}
+.three-things__grid span + span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18%;
+  bottom: 18%;
+  width: 1px;
+  background: var(--line);
+}
+.three-things__subline {
+  margin: 28px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-mute);
+}
+@media (max-width: 720px) {
+  .three-things {
+    padding: 72px 0;
+  }
+  .three-things__grid {
+    flex-direction: column;
+    font-size: 28px;
+    gap: 18px;
+  }
+  .three-things__grid span {
+    padding: 0;
+  }
+  .three-things__grid span + span::before {
+    display: none;
+  }
+}
+
+/* ---------- Future and Beyond (home page) ---------- */
+.future-block {
+  background: var(--bg);
+  padding: 160px 0;
+}
+.future-block__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  text-align: center;
+}
+.future-block__inner h2 {
+  margin: 18px 0 28px;
+}
+.future-block__body {
+  font-family: var(--sans);
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+}
+@media (max-width: 720px) {
+  .future-block {
+    padding: 80px 0;
+  }
+  .future-block__body {
+    font-size: 17px;
+  }
+}
+
+/* ---------- Reserve pretext ---------- */
+.reserve__pretext {
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: rgba(26, 24, 22, 0.6);
+  margin: 0 auto 24px;
+  max-width: 720px;
+  padding: 0 32px;
+}
+@media (max-width: 720px) {
+  .reserve__pretext {
+    font-size: 18px;
+    padding: 0 20px;
   }
 }
 
@@ -2066,6 +2200,8 @@ em {
 #services *,
 #about,
 #about *,
+#three-things,
+#three-things *,
 #wwww,
 #wwww *,
 #book,
@@ -2177,6 +2313,17 @@ em {
   color: #fff;
   align-self: flex-end;
   border-top-right-radius: 4px;
+}
+.chat__msg--tagline {
+  background: transparent;
+  border: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-mute);
+  padding: 0 4px;
+  align-self: flex-start;
+  max-width: 100%;
 }
 .chat__chips {
   display: flex;
