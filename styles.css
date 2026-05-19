@@ -445,6 +445,121 @@ em {
   }
 }
 
+/* ---------- The House doors (home preview band) ---------- */
+.house-doors {
+  background: var(--bg);
+  padding-bottom: 96px;
+}
+.house-doors__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 0 auto;
+}
+.house-doors__item {
+  background: var(--bg);
+  padding: 44px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--ink);
+  text-align: left;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+.house-doors__item:hover,
+.house-doors__item:focus-visible {
+  background: var(--ink);
+  color: #fff;
+  outline: none;
+}
+.house-doors__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+.house-doors__item:hover .house-doors__eyebrow,
+.house-doors__item:focus-visible .house-doors__eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+.house-doors__title {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0;
+  flex: 1;
+  color: inherit;
+}
+.house-doors__cta {
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 1080px) {
+  .house-doors__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .house-doors__grid {
+    grid-template-columns: 1fr;
+  }
+  .house-doors__item {
+    padding: 32px 20px;
+  }
+}
+
+/* ---------- Who we've worked with (home page) ---------- */
+.wwww {
+  background: var(--bg-cream);
+  padding-bottom: 120px;
+}
+.wwww__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.wwww__item {
+  text-align: center;
+  padding: 28px 24px;
+  border-top: 1px solid var(--line);
+}
+.wwww__role {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0 0 14px;
+}
+.wwww__quote {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0;
+}
+@media (max-width: 720px) {
+  .wwww__grid {
+    grid-template-columns: 1fr;
+  }
+  .wwww {
+    padding-bottom: 80px;
+  }
+}
+
 /* ---------- About Us (home page) ---------- */
 .about-us {
   background: var(--bg-cream);
@@ -1983,6 +2098,10 @@ em {
 #services *,
 #about,
 #about *,
+#doors,
+#doors *,
+#wwww,
+#wwww *,
 #book,
 #book * {
   font-family: var(--serif);
