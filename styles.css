@@ -1899,6 +1899,21 @@ em {
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
+.footer__legal {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer__legal a {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  transition: color 0.2s ease;
+}
+.footer__legal a:hover {
+  color: #fff;
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
