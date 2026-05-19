@@ -1,15 +1,15 @@
 /* ---------- Tokens ---------- */
 :root {
-  --bg: #f1ece2; /* warm Bentley cream */
-  --bg-cream: #ebe6da; /* slightly deeper cream for striped sections */
-  --bg-light: #faf8f3; /* off-white for cards / forms */
-  --ink: #1a1816; /* near-black body text */
-  --ink-soft: #2d2a26;
-  --ink-mute: #4a4640;
-  --line: rgba(26, 24, 22, 0.18); /* hairline */
-  --accent: #2d1b4e; /* deep purple, used sparingly */
-  --hero-1: #11181c;
-  --hero-2: #1a1614;
+  --bg: #ffffff; /* pure white background */
+  --bg-cream: #ffffff; /* unified — no tonal stripe */
+  --bg-light: #ffffff; /* unified */
+  --ink: #000000; /* pure black */
+  --ink-soft: #1a1a1a;
+  --ink-mute: #666666;
+  --line: rgba(0, 0, 0, 0.15); /* hairline */
+  --accent: #000000; /* B&W accent */
+  --hero-1: #000000;
+  --hero-2: #000000;
   --max: 1320px;
   --serif: "Cormorant Garamond", "Times New Roman", serif;
   --sans: "Cormorant Garamond", "Times New Roman", serif;
@@ -243,7 +243,7 @@ em {
 
 /* ---------- Inside the Cabin ---------- */
 .cabin {
-  background: #0a0d0f;
+  background: #000;
   color: #fff;
 }
 .cabin .section-head h2,
@@ -288,7 +288,7 @@ em {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #0a0d0f;
+  background: #000;
 }
 .cabin__media img {
   width: 100%;
@@ -699,7 +699,7 @@ em {
   color: #fff;
 }
 .btn--primary:hover {
-  background: #183025;
+  background: #1a1a1a;
 }
 .btn--ghost {
   background: transparent;
@@ -741,7 +741,7 @@ em {
 .hero__media {
   position: absolute;
   inset: 0;
-  background: #0a0d0f;
+  background: #000;
   z-index: -2;
   overflow: hidden;
 }
@@ -765,11 +765,11 @@ em {
   background:
     linear-gradient(
       180deg,
-      rgba(10, 13, 15, 0.35) 0%,
-      rgba(10, 13, 15, 0.15) 30%,
-      rgba(10, 13, 15, 0.65) 100%
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.15) 30%,
+      rgba(0, 0, 0, 0.65) 100%
     ),
-    linear-gradient(90deg, rgba(10, 13, 15, 0.45) 0%, rgba(10, 13, 15, 0) 55%);
+    linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%);
   z-index: -1;
 }
 .hero__content {
@@ -1170,7 +1170,7 @@ em {
 /* ---------- Fleet gallery (Bentley-style full-bleed hero carousel) ---------- */
 .gallery {
   position: relative;
-  background: #0a0d0f;
+  background: #000;
   color: #fff;
 }
 .gallery__viewport {
@@ -1500,13 +1500,13 @@ em {
   height: 22%;
   background: linear-gradient(
     180deg,
-    rgba(45, 27, 78, 0.10),
+    rgba(0, 0, 0, 0.10),
     rgba(0, 0, 0, 0.5)
   );
   border-radius: 80% 30% 8% 8% / 100% 100% 8% 8%;
 }
 .card__media--limo {
-  background: linear-gradient(160deg, #0e1413 0%, #1f3a2e 100%);
+  background: linear-gradient(160deg, #000 0%, #1a1a1a 100%);
 }
 .card__media--limo::before {
   content: "";
@@ -1534,13 +1534,13 @@ em {
   object-position: center;
 }
 .card__media--bespoke {
-  background: linear-gradient(135deg, #2a221a 0%, #5a4a36 50%, #2a221a 100%);
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
 }
 .card__media--bespoke::before {
   content: "";
   position: absolute;
   inset: 12%;
-  border: 1px solid rgba(45, 27, 78, 0.20);
+  border: 1px solid rgba(0, 0, 0, 0.20);
 }
 .card__media--bespoke::after {
   background: linear-gradient(
@@ -1590,10 +1590,10 @@ em {
   background:
     radial-gradient(
       55% 70% at 25% 60%,
-      rgba(45, 27, 78, 0.18),
+      rgba(0, 0, 0, 0.18),
       transparent 70%
     ),
-    linear-gradient(135deg, #0a1411 0%, #1f3a2e 60%, #11181c 100%);
+    linear-gradient(135deg, #000 0%, #1a1a1a 60%, #000 100%);
   z-index: -1;
 }
 .editorial__media::after {
@@ -1668,7 +1668,7 @@ em {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #0a0d0f;
+  background: #000;
 }
 .tile__media img {
   width: 100%;
@@ -1830,7 +1830,7 @@ em {
 
 /* ---------- Footer ---------- */
 .footer {
-  background: #0a0d0f;
+  background: #000;
   color: rgba(255, 255, 255, 0.7);
   padding: 100px 0 30px;
 }
@@ -2034,7 +2034,7 @@ em {
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: #0a0d0f;
+  background: #000;
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.55s ease;
