@@ -102,16 +102,16 @@
     lastFocused = document.activeElement;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
-    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
     const closeBtn = modal.querySelector('.modal__close');
-    if (closeBtn) closeBtn.focus();
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
   };
   const close = () => {
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
-    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
     if (lastFocused && typeof lastFocused.focus === 'function') {
-      lastFocused.focus();
+      lastFocused.focus({ preventScroll: true });
     }
   };
 
