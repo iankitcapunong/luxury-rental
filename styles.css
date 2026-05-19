@@ -224,16 +224,18 @@ em {
     letter-spacing: 0.22em;
   }
 }
-@media (max-width: 560px) {
-  .brand__name {
-    font-size: 15px;
-    letter-spacing: 0.16em;
-  }
+@media (max-width: 720px) {
   .hamburger__label {
     display: none;
   }
   .hamburger {
     gap: 0;
+  }
+}
+@media (max-width: 560px) {
+  .brand__name {
+    font-size: 15px;
+    letter-spacing: 0.16em;
   }
 }
 .nav__menu {
