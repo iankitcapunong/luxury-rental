@@ -174,19 +174,22 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Mobile hamburger reveal nav menu
+// Hamburger toggles the overlay nav menu
 const hamburger = document.getElementById('hamburger');
 const menu = document.querySelector('.nav__menu');
 hamburger?.addEventListener('click', () => {
   const open = menu.classList.toggle('is-open');
+  hamburger.classList.toggle('is-open', open);
   hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  if (open) {
-    menu.style.cssText = 'display:flex; position:absolute; top:100%; left:0; right:0; background:#fff; border-bottom:1px solid var(--line); padding:24px 32px;';
-    menu.querySelector('ul').style.cssText = 'flex-direction:column; gap:18px; align-items:flex-start;';
-  } else {
-    menu.style.cssText = '';
-    menu.querySelector('ul').style.cssText = '';
-  }
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+menu?.querySelectorAll('a').forEach((a) => {
+  a.addEventListener('click', () => {
+    menu.classList.remove('is-open');
+    hamburger?.classList.remove('is-open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
 });
 
 // Scroll-reveal for fleet gallery, service tiles, cabin items (bidirectional)
