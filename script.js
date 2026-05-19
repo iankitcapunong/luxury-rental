@@ -270,7 +270,7 @@ hamburger?.addEventListener('click', () => {
     {
       id: 'greet',
       keywords: ['hi', 'hello', 'hey', 'good morning', 'good afternoon', 'good evening'],
-      answer: 'Good day. How may I help you with Luxury Transport? Ask about our fleet, rates, service area, or booking.'
+      answer: 'Good day. I attend to bookings, routes, and anything else.'
     },
     {
       id: 'fleet',
