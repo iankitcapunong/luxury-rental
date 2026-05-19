@@ -1,15 +1,15 @@
 /* ---------- Tokens ---------- */
 :root {
-  --bg: #f1ece2; /* warm Bentley cream */
-  --bg-cream: #ebe6da; /* slightly deeper cream for striped sections */
-  --bg-light: #faf8f3; /* off-white for cards / forms */
-  --ink: #1a1816; /* near-black body text */
-  --ink-soft: #2d2a26;
-  --ink-mute: #4a4640;
-  --line: rgba(26, 24, 22, 0.18); /* hairline */
-  --accent: #2d1b4e; /* deep purple, used sparingly */
-  --hero-1: #11181c;
-  --hero-2: #1a1614;
+  --bg: #ffffff; /* pure white background */
+  --bg-cream: #ffffff; /* unified — no tonal stripe */
+  --bg-light: #ffffff; /* unified */
+  --ink: #000000; /* pure black */
+  --ink-soft: #1a1a1a;
+  --ink-mute: #666666;
+  --line: rgba(0, 0, 0, 0.15); /* hairline */
+  --accent: #000000; /* B&W accent */
+  --hero-1: #000000;
+  --hero-2: #000000;
   --max: 1320px;
   --serif: "Cormorant Garamond", "Times New Roman", serif;
   --sans: "Cormorant Garamond", "Times New Roman", serif;
