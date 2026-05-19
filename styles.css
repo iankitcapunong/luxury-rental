@@ -208,7 +208,7 @@ em {
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
-  padding: 56px 40px 40px;
+  padding: 56px 0 40px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -223,8 +223,10 @@ em {
   display: flex;
   gap: 18px;
   list-style: none;
-  margin: 0;
-  padding: 0 0 0 16px;
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 32px;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -250,7 +252,10 @@ em {
 @media (max-width: 720px) {
   .nav__menu {
     top: 64px;
-    padding: 40px 24px 32px;
+    padding: 40px 0 32px;
+  }
+  .nav__menu ul {
+    padding: 0 20px;
   }
   .nav__menu a {
     font-size: 21px;
