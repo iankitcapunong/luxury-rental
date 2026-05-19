@@ -1186,10 +1186,10 @@ em {
 }
 .gallery__desc {
   color: rgba(255, 255, 255, 0.86);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 19px;
+  line-height: 1.65;
   margin: 0;
-  max-width: 480px;
+  max-width: 520px;
 }
 .gallery__actions {
   display: flex;
@@ -1325,7 +1325,7 @@ em {
     font-size: 30px;
   }
   .gallery__desc {
-    font-size: 15px;
+    font-size: 17px;
   }
   .gallery__chrome {
     padding: 18px 20px;
