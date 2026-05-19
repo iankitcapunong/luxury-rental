@@ -177,19 +177,47 @@ onScroll();
 // Hamburger toggles the overlay nav menu
 const hamburger = document.getElementById('hamburger');
 const menu = document.querySelector('.nav__menu');
-hamburger?.addEventListener('click', () => {
-  const open = menu.classList.toggle('is-open');
+let menuLockedScrollY = 0;
+
+function lockBodyScroll() {
+  menuLockedScrollY = window.scrollY || window.pageYOffset || 0;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${menuLockedScrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.width = '100%';
+}
+function unlockBodyScroll() {
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  document.body.style.width = '';
+  window.scrollTo(0, menuLockedScrollY);
+}
+
+function setMenuOpen(open) {
+  if (!menu || !hamburger) return;
+  menu.classList.toggle('is-open', open);
   hamburger.classList.toggle('is-open', open);
   hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  document.body.style.overflow = open ? 'hidden' : '';
+  if (open) lockBodyScroll();
+  else unlockBodyScroll();
+}
+
+hamburger?.addEventListener('click', () => {
+  const isOpen = menu?.classList.contains('is-open');
+  setMenuOpen(!isOpen);
 });
+
 menu?.querySelectorAll('a').forEach((a) => {
-  a.addEventListener('click', () => {
-    menu.classList.remove('is-open');
-    hamburger?.classList.remove('is-open');
-    hamburger?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  });
+  a.addEventListener('click', () => setMenuOpen(false));
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && menu?.classList.contains('is-open')) {
+    setMenuOpen(false);
+  }
 });
 
 // Scroll-reveal for fleet gallery, service tiles, cabin items (bidirectional)

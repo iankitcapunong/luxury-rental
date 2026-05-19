@@ -223,11 +223,10 @@ em {
   display: flex;
   gap: 18px;
   list-style: none;
-  margin: 0 auto;
-  padding: 0;
+  margin: 0;
+  padding: 0 0 0 16px;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 540px;
 }
 .nav__menu a {
   font-family: var(--serif);
