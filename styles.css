@@ -196,11 +196,21 @@ em {
 }
 .nav__menu ul {
   display: flex;
-  gap: 36px;
+  gap: 28px;
   list-style: none;
   margin: 0;
   padding: 0;
   justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+@media (max-width: 1280px) {
+  .nav__menu ul {
+    gap: 22px;
+  }
+  .nav__menu a {
+    font-size: 14px;
+    letter-spacing: 0.12em;
+  }
 }
 .nav__menu a {
   font-size: 15px;
@@ -1844,7 +1854,7 @@ em {
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1080px) {
+@media (max-width: 1120px) {
   .nav__menu {
     display: none;
   }
