@@ -808,7 +808,6 @@ em {
     opacity 0.25s ease;
 }
 .hamburger__label {
-  display: inline-block;
   line-height: 1;
 }
 .hamburger.is-open .hamburger__icon span:nth-child(1) {
