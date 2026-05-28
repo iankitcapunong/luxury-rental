@@ -85,7 +85,7 @@
     <div class="container about-us__body">
       <p>For some years now, we have worked to a quiet ambition: to redefine the way our clients move. A journey, in our hands, is not a transfer but a seamless, curated experience, set to the sophistication, discretion and refinement carried in every other part of the day.</p>
 
-      <p>The commitment runs further than the car. Marques are privately owned, manufacturer maintained, and prepared to concours condition before each assignment. The cars are, in their way, increasingly considered for hybrid and electric power. We intend to be here long into the future, and the quieter option will, in its time, be at the doorstep.</p>
+      <p>The commitment runs further than the vehicle. Our marque vehicles are privately owned, manufacturer maintained, and prepared to concours condition before each assignment. They are, in their way, increasingly considered for hybrid and quieter power. We intend to be here long into the future, and the quieter option will, in its time, be at the doorstep.</p>
 
       <p class="about-us__motto"><em>Move in silence.</em> Discretion is our policy.</p>
     </div>
@@ -108,8 +108,8 @@
   <section class="future-block" id="future">
     <div class="container future-block__inner">
       <p class="eyebrow">Looking ahead</p>
-      <h2>The future, and beyond.</h2>
-      <p class="future-block__body">Our standard: cars hand-maintained, hybrid and electric power introduced where the route allows, and drivers paid as professionals, not as gig hires. The future of luxury transport is not larger. It is quieter.</p>
+      <h2>To the future and beyond.</h2>
+      <p class="future-block__body">Our standard: vehicles hand-maintained, quieter power introduced where the route allows, and drivers paid as professionals, not as gig hires. The future of luxury transport is not larger. It is quieter. A legacy, one journey at a time.</p>
     </div>
   </section>
 
@@ -210,6 +210,49 @@
     </div>
   </footer>
 
+  <!-- Sticky enquiry popup (homepage) -->
+  <button class="enquire-toggle" id="enquireToggle" type="button" aria-haspopup="dialog" aria-controls="enquireModal" aria-expanded="false">
+    Quick enquiry
+  </button>
+
+  <div class="enquire-modal" id="enquireModal" role="dialog" aria-modal="true" aria-labelledby="enquireTitle" aria-hidden="true">
+    <div class="enquire-modal__backdrop" data-enquire-close></div>
+    <div class="enquire-modal__panel">
+      <button class="enquire-modal__close" type="button" aria-label="Close enquiry" data-enquire-close>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M6 6l12 12M18 6l-12 12" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <p class="eyebrow">By introduction only</p>
+      <h3 id="enquireTitle" class="enquire-modal__title">A quiet word.</h3>
+      <p class="enquire-modal__lede">Leave the details. A concierge will reply within the hour.</p>
+      <form class="enquire-modal__form" id="enquireForm" onsubmit="event.preventDefault(); document.getElementById('enquireForm').setAttribute('data-submitted','true'); document.getElementById('enquireDone').hidden = false; document.getElementById('enquireForm').hidden = true;">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label>
+          <span>Contact</span>
+          <input type="text" name="contact" required placeholder="Email or phone" autocomplete="email" />
+        </label>
+        <label>
+          <span>Destination</span>
+          <input type="text" name="destination" required placeholder="Address or postcode" />
+        </label>
+        <label>
+          <span>When</span>
+          <input type="text" name="when" required placeholder="Date and time" />
+        </label>
+        <button type="submit" class="btn btn--primary">Send enquiry</button>
+        <p class="enquire-modal__hint">No introduction needed. We will be in touch.</p>
+      </form>
+      <div class="enquire-modal__done" id="enquireDone" hidden>
+        <p class="enquire-modal__done-line">Received, quietly.</p>
+        <p class="enquire-modal__done-sub">A concierge will reply within the hour.</p>
+      </div>
+    </div>
+  </div>
+
   <button class="chat-toggle" id="chatToggle" aria-label="Open concierge chat" aria-expanded="false">
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
       <path d="M4 5h16v11H8l-4 4V5z" stroke-linejoin="round"/>
@@ -242,5 +285,30 @@
   </aside>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      const toggle = document.getElementById('enquireToggle');
+      const modal = document.getElementById('enquireModal');
+      if (!toggle || !modal) return;
+      const closers = modal.querySelectorAll('[data-enquire-close]');
+      const open = () => {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      };
+      toggle.addEventListener('click', open);
+      closers.forEach((el) => el.addEventListener('click', close));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+      });
+    })();
+  </script>
 </body>
 </html>
