@@ -1510,6 +1510,32 @@ em {
   margin: 0;
   max-width: 520px;
 }
+/* Wraps the main desc + the on-board services line in the middle grid column,
+   keeping the actions button in the right column. */
+.gallery__body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 520px;
+}
+.gallery__body .gallery__desc {
+  max-width: none;
+}
+.gallery__desc--onboard {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+.gallery__desc--onboard strong {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  display: inline-block;
+  margin-right: 6px;
+}
 .gallery__actions {
   display: flex;
   gap: 14px;
