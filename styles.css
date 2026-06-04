@@ -297,19 +297,33 @@ em {
 .nav__menu a::after {
   display: none;
 }
-/* Active page indicator — link gets a hairline underline so the visitor knows where they are. */
+/* Active page indicator — a leading dash marker plus a solid underline so the visitor clearly knows where they are. */
 .nav__menu a[aria-current="page"] {
   position: relative;
+  padding-left: 40px;
+  font-weight: 600;
 }
 .nav__menu a[aria-current="page"]::before {
   content: "";
   position: absolute;
   left: 0;
-  right: 0;
-  bottom: -4px;
-  height: 1px;
+  top: 50%;
+  width: 26px;
+  height: 2px;
+  transform: translateY(-50%);
   background: currentColor;
-  opacity: 0.55;
+  opacity: 0.95;
+}
+.nav__menu a[aria-current="page"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 40px;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.85;
 }
 @media (max-width: 720px) {
   .nav__menu {
@@ -1319,18 +1333,18 @@ em {
 }
 .vision-essay__heading {
   font-family: var(--serif);
-  font-size: clamp(48px, 6vw, 84px);
+  font-size: clamp(56px, 6.6vw, 92px);
   line-height: 1.05;
   letter-spacing: -0.01em;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 0 36px;
   color: var(--ink);
 }
 .vision-essay__manifesto {
   font-family: var(--serif);
-  font-size: 34px;
-  line-height: 1.4;
-  color: var(--ink);
+  font-size: 27px;
+  line-height: 1.45;
+  color: var(--ink-soft);
   font-weight: 400;
   margin: 0;
   letter-spacing: -0.005em;

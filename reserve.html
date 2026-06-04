@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reserve · Luxury Transport</title>
+  <title>Reservation · Luxury Transport</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -44,11 +44,9 @@
     <nav class="nav__menu" id="navMenu" aria-label="Primary">
       <ul>
         <li><a href="vision.html">The Vision</a></li>
-        <li><a href="future.html">The Future</a></li>
         <li><a href="fleet.html">The Fleet</a></li>
-        <li><a href="fleet.html#cabin">Inside the Cabin</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="reserve.html" aria-current="page">Reserve</a></li>
+        <li><a href="reserve.html" aria-current="page">Reservation</a></li>
       </ul>
     </nav>
   </header>
@@ -56,9 +54,9 @@
   <!-- Reserve · Express path -->
   <section class="reserve" id="book">
     <div class="container section-head">
-      <p class="eyebrow">Reserve</p>
+      <p class="eyebrow">Reservation</p>
       <h2>Two fields. One quiet reply.</h2>
-      <p class="section-head__lede">Tell us the destination and the hour. A concierge will reply within the hour with a chauffeur, a marque, and a route.</p>
+      <p class="section-head__lede">Tell us the destination and the hour. A concierge will reply within the hour with a chauffeur, a vehicle, and a route.</p>
     </div>
     <div class="container" style="display: flex; justify-content: center; padding: 0 32px 32px;">
       <form class="express" onsubmit="event.preventDefault(); document.getElementById('expressOk').hidden=false; document.getElementById('detailForm').scrollIntoView({behavior:'smooth'});">
@@ -70,7 +68,7 @@
           <span>When</span>
           <input type="text" required placeholder="Date and time" />
         </label>
-        <button type="submit" class="btn btn--primary">Reserve a Journey</button>
+        <button type="submit" class="btn btn--primary">Make a Reservation</button>
       </form>
     </div>
     <p id="expressOk" class="reserve__ok" style="text-align: center; padding: 0 32px 80px;" hidden>Thank you. Your request is with the concierge. A few optional details follow.</p>
