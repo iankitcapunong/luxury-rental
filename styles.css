@@ -519,20 +519,22 @@ em {
   padding: 28px 28px 32px;
 }
 .cabin__eyebrow {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-mute);
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 }
 .cabin__item h3 {
-  font-size: 22px;
-  margin: 0 0 12px;
+  font-size: 26px;
+  line-height: 1.25;
+  margin: 0 0 14px;
   color: var(--ink);
   font-weight: 700;
 }
 .cabin__item p {
-  font-size: 15px;
+  font-size: 17px;
+  line-height: 1.6;
   margin: 0;
   color: var(--ink-soft);
 }
@@ -554,7 +556,7 @@ em {
     padding: 22px 24px 26px;
   }
   .cabin__item h3 {
-    font-size: 20px;
+    font-size: 23px;
   }
 }
 
