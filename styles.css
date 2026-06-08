@@ -2420,6 +2420,27 @@ em {
     background 0.25s ease;
   z-index: 50;
 }
+/* Persistent "Concierge" label so visitors know the assistant is there to help. */
+.chat-toggle::after {
+  content: "Concierge";
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  padding: 7px 14px;
+  background: var(--bg-cream);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  box-shadow: 0 14px 30px -18px rgba(15, 17, 18, 0.5);
+  pointer-events: none;
+}
+.chat-toggle[aria-expanded="true"]::after {
+  opacity: 0;
+}
 
 /* ---------- Quick enquiry pill + modal (homepage) ---------- */
 .enquire-toggle {
