@@ -1103,209 +1103,266 @@ em {
 }
 
 /* ---------- Future page editorial (cream theme) ---------- */
-.future-essay {
+/* ---------- The Future (reconstructed editorial layout) ---------- */
+.future {
   background: var(--bg);
   color: var(--ink);
-  padding-bottom: 140px;
-  font-family: var(--serif);
-}
-.future-essay__intro {
-  text-align: center;
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 140px 32px 24px;
-}
-.future-essay__intro h2 {
-  color: var(--ink);
-  font-size: 44px;
-  margin: 18px 0 28px;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-}
-.future-essay__intro .eyebrow {
-  color: var(--ink-mute);
-}
-.future-essay__lede {
-  color: var(--ink-soft);
-  font-family: var(--serif);
-  font-size: 21px;
-  line-height: 1.65;
-  margin: 0;
 }
 
-.future-timeline {
-  max-width: 1040px;
+/* Intro */
+.future-intro {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 96px 32px 24px;
-  display: grid;
-  gap: 56px;
+  text-align: center;
+  padding: 150px 32px 36px;
 }
-.future-timeline__phase {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 56px;
-  align-items: start;
-  padding-bottom: 56px;
+.future-intro .eyebrow {
+  color: var(--ink-mute);
+  margin-bottom: 26px;
+}
+.future-intro__title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(40px, 5.6vw, 78px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin: 0 0 30px;
+  color: var(--ink);
+}
+.future-intro__lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 27px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Principles — alternating rows with oversized ghost numerals */
+.future-principles {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 80px 32px 24px;
+}
+.principle {
+  display: flex;
+  align-items: center;
+  gap: clamp(40px, 6vw, 100px);
+  padding: 76px 0;
+  border-top: 1px solid var(--line);
+}
+.principle:last-child {
   border-bottom: 1px solid var(--line);
 }
-.future-timeline__phase:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.principle:nth-child(even) {
+  flex-direction: row-reverse;
 }
-.future-timeline__marker {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.principle__index {
+  flex: 0 0 auto;
+  width: clamp(130px, 24vw, 300px);
+  text-align: center;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(110px, 17vw, 230px);
+  line-height: 0.78;
+  letter-spacing: -0.02em;
+  color: rgba(15, 17, 18, 0.08);
 }
-.future-timeline__years {
+.principle__text {
+  flex: 1 1 auto;
+  max-width: 620px;
+}
+.principle:nth-child(even) .principle__text {
+  text-align: right;
+}
+.principle:nth-child(even) .principle__body {
+  margin-left: auto;
+}
+.principle__name {
   font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.26em;
+  font-size: 12px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ink-mute);
+  margin: 0 0 18px;
 }
-.future-timeline__phase-name {
+.principle__text h3 {
   font-family: var(--serif);
-  font-size: 36px;
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   color: var(--ink);
-  line-height: 1.05;
-  letter-spacing: -0.005em;
+  margin: 0 0 18px;
 }
-.future-timeline__body h3 {
-  color: var(--ink);
-  font-size: 28px;
-  margin: 0 0 16px;
-  line-height: 1.2;
-}
-.future-timeline__body p {
-  color: var(--ink-soft);
+.principle__body {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.7;
+  color: var(--ink-soft);
   margin: 0;
+  max-width: 52ch;
 }
 
-.future-ambitions__head {
+/* What's on the horizon — hairline matrix, no cards */
+.future-horizon {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 80px 32px 24px;
+}
+.future-horizon__head {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 72px 32px 28px;
 }
-.future-ambitions__head .eyebrow {
+.future-horizon__head .eyebrow {
   color: var(--ink-mute);
+  margin-bottom: 18px;
 }
-.future-ambitions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-.future-ambition {
-  padding: 36px 32px;
-  background: var(--bg-cream);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-.future-ambition:hover {
-  background: var(--bg-light);
-  border-color: rgba(26, 24, 22, 0.32);
-  transform: translateY(-3px);
-}
-.future-ambition h4 {
+.future-horizon__title {
   font-family: var(--serif);
-  font-size: 24px;
+  font-weight: 500;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 52px;
+}
+.future-horizon__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.horizon-item {
+  padding: 52px 48px 56px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.35s ease;
+}
+.horizon-item:hover {
+  background: var(--bg-cream);
+}
+.horizon-item__no {
+  display: block;
+  font-family: var(--serif);
+  font-size: 16px;
+  letter-spacing: 0.28em;
+  color: var(--ink-mute);
+  margin-bottom: 24px;
+}
+.horizon-item h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 31px);
   color: var(--ink);
   margin: 0 0 14px;
   letter-spacing: -0.005em;
 }
-.future-ambition p {
-  color: var(--ink-soft);
+.horizon-item p {
   font-family: var(--serif);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-soft);
   margin: 0;
 }
 
-.future-commitment {
-  text-align: center;
-  max-width: 860px;
+/* Security band — full-bleed dark */
+.future-band {
+  background: #0f1112;
+  color: #f5f1e8;
+  margin-top: 100px;
+}
+.future-band__inner {
+  max-width: 920px;
   margin: 0 auto;
-  padding: 96px 32px 0;
+  text-align: center;
+  padding: 134px 32px;
 }
-.future-commitment .eyebrow {
-  color: var(--ink-mute);
-  margin: 0 0 28px;
+.future-band .eyebrow {
+  color: rgba(245, 241, 232, 0.55);
+  margin-bottom: 34px;
 }
-.future-commitment__statement {
+.future-band__statement {
   font-family: var(--serif);
-  font-size: 26px;
-  line-height: 1.5;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 3.6vw, 44px);
+  line-height: 1.3;
+  color: #f8f5ed;
+  margin: 0;
+}
+
+/* Closing commitment */
+.future-close {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 32px 140px;
+}
+.future-close .eyebrow {
+  color: var(--ink-mute);
+  margin-bottom: 30px;
+}
+.future-close__statement {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
   color: var(--ink);
   margin: 0;
-  font-weight: 400;
 }
-@media (max-width: 1080px) {
-  .future-timeline__phase {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding-bottom: 48px;
+
+@media (max-width: 860px) {
+  .principle,
+  .principle:nth-child(even) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 52px 0;
   }
-  .future-timeline__phase-name {
-    font-size: 30px;
+  .principle__index {
+    width: auto;
+    text-align: left;
+    font-size: clamp(90px, 26vw, 150px);
+    line-height: 0.9;
+  }
+  .principle:nth-child(even) .principle__text {
+    text-align: left;
+  }
+  .principle:nth-child(even) .principle__body {
+    margin-left: 0;
+  }
+  .future-horizon__grid {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 720px) {
-  .future-essay {
-    padding-bottom: 96px;
+  .future-intro {
+    padding: 96px 20px 24px;
   }
-  .future-essay__intro {
-    padding: 88px 20px 16px;
+  .future-principles {
+    padding: 48px 20px 16px;
   }
-  .future-essay__intro h2 {
-    font-size: 30px;
+  .principle__body {
+    font-size: 17px;
   }
-  .future-essay__lede {
-    font-size: 18px;
+  .future-horizon {
+    padding: 56px 20px 16px;
   }
-  .future-timeline {
-    padding: 64px 20px 8px;
-    gap: 40px;
+  .future-horizon__title {
+    margin-bottom: 36px;
   }
-  .future-timeline__phase {
-    gap: 14px;
-    padding-bottom: 40px;
+  .horizon-item {
+    padding: 40px 28px 44px;
   }
-  .future-timeline__phase-name {
-    font-size: 26px;
+  .future-band {
+    margin-top: 72px;
   }
-  .future-timeline__body h3 {
-    font-size: 22px;
+  .future-band__inner {
+    padding: 92px 22px;
   }
-  .future-timeline__body p {
-    font-size: 16px;
-  }
-  .future-ambitions {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 0 20px;
-  }
-  .future-ambitions__head {
-    padding: 48px 20px 20px;
-  }
-  .future-ambition {
-    padding: 28px 24px;
-  }
-  .future-commitment {
-    padding: 72px 20px 0;
-  }
-  .future-commitment__statement {
-    font-size: 20px;
+  .future-close {
+    padding: 84px 20px 96px;
   }
 }
 
@@ -2937,9 +2994,6 @@ em {
   .gallery__chrome {
     padding: 14px 16px;
   }
-  .future-timeline {
-    padding: 48px 20px 8px;
-  }
   .modal {
     padding: 12px;
   }
@@ -2984,12 +3038,6 @@ em {
   .gallery__counter {
     min-width: auto;
     font-size: 11px;
-  }
-  .future-essay__intro h2 {
-    font-size: 26px;
-  }
-  .future-ambition {
-    padding: 24px 20px;
   }
   .vision-essay__manifesto {
     font-size: 20px;
