@@ -1935,6 +1935,50 @@ em {
 .services {
   background: var(--bg-cream);
 }
+/* ---------- Services closing quote ---------- */
+.services-quote {
+  background: #0f1112;
+  color: #f5f1e8;
+  text-align: center;
+}
+.services-quote__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 140px 32px;
+}
+.services-quote .eyebrow {
+  color: rgba(245, 241, 232, 0.55);
+  margin-bottom: 40px;
+}
+.services-quote__quote {
+  margin: 0;
+}
+.services-quote__quote p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(30px, 4.6vw, 56px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: #f8f5ed;
+}
+.services-quote__attribution {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.6);
+  margin: 40px 0 0;
+}
+@media (max-width: 720px) {
+  .services-quote__inner {
+    padding: 88px 22px;
+  }
+  .services-quote__attribution {
+    margin-top: 28px;
+  }
+}
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
