@@ -547,7 +547,7 @@ em {
   font-weight: 700;
 }
 .cabin__item p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
   margin: 0;
   color: var(--ink-soft);
@@ -741,7 +741,7 @@ em {
   text-align: center;
 }
 .about-us__body p {
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.7;
   color: var(--ink);
   font-weight: 400;
@@ -1198,7 +1198,7 @@ em {
 }
 .principle__body {
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.7;
   color: var(--ink-soft);
   margin: 0;
@@ -1260,7 +1260,7 @@ em {
 }
 .horizon-item p {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.65;
   color: var(--ink-soft);
   margin: 0;
@@ -1464,7 +1464,7 @@ em {
 }
 .section-head__lede {
   color: var(--ink-mute);
-  font-size: 17px;
+  font-size: 19px;
 }
 .section-head--row {
   max-width: var(--max);
@@ -1579,7 +1579,7 @@ em {
 }
 .gallery__desc {
   color: rgba(255, 255, 255, 0.86);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.65;
   margin: 0;
   max-width: 520px;
@@ -2106,7 +2106,7 @@ em {
 }
 .tile__desc {
   margin: 0;
-  font-size: 14.5px;
+  font-size: 16px;
   line-height: 1.55;
   color: rgba(245, 241, 232, 0.78);
   max-width: 34ch;
