@@ -1541,24 +1541,17 @@ em {
   isolation: isolate;
   overflow: hidden;
 }
+/* Blurred side-fill no longer needed now that the photo is full-bleed. */
 .gallery__bg-fill {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(48px) brightness(0.78);
-  transform: scale(1.12);
-  z-index: -3;
-  display: block;
+  display: none;
 }
 .gallery__bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
+  object-fit: cover;
+  object-position: center;
   z-index: -2;
   display: block;
 }
