@@ -1,0 +1,12 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "single-font"
+    ],
+    "ignoreFiles": [
+      "fleet.html",
+      "future.html"
+    ],
+    "ignoreValues": []
+  }
+}
