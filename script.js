@@ -2,6 +2,7 @@
 (function () {
   const veil = document.getElementById('pageVeil');
   if (!veil) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const MIN_SHOW = 250;
   const FADE = 550;
   const startedAt = Date.now();
@@ -30,6 +31,10 @@
     const href = a.getAttribute('href');
     if (!isInternal(href)) return;
     e.preventDefault();
+    if (reduceMotion) {
+      window.location.href = href;
+      return;
+    }
     veil.classList.remove('is-hidden');
     setTimeout(() => {
       window.location.href = href;
@@ -204,6 +209,7 @@ function setMenuOpen(open) {
   menu.classList.toggle('is-open', open);
   hamburger.classList.toggle('is-open', open);
   hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   if (open) lockBodyScroll();
   else unlockBodyScroll();
 }
@@ -279,7 +285,7 @@ document.addEventListener('keydown', (e) => {
     if (indexEl) indexEl.textContent = String(idx + 1);
     if (prevBtn) prevBtn.disabled = idx === 0;
     if (nextBtn) nextBtn.disabled = idx === slides.length - 1;
-    if (progressEl) progressEl.style.width = ((idx + 1) / slides.length) * 100 + '%';
+    if (progressEl) progressEl.style.transform = 'scaleX(' + (idx + 1) / slides.length + ')';
   };
 
   prevBtn?.addEventListener('click', () => goTo(currentIndex() - 1));
@@ -354,7 +360,7 @@ document.addEventListener('keydown', (e) => {
     {
       id: 'contact',
       keywords: ['contact', 'phone', 'call', 'email', 'reach', 'number', 'tel'],
-      answer: 'You can reach us by phone at +44 (0)20 0000 0000 or email bookings@luxurytransport.co.uk. The Reserve form on this page will also notify a concierge directly.'
+      answer: 'You can reach us by phone at +44 (0)20 7946 0814 or email concierge@luxurytransport.co.uk. The Reserve form on this page will also notify a concierge directly.'
     },
     {
       id: 'hours',
@@ -376,7 +382,7 @@ document.addEventListener('keydown', (e) => {
   ];
   const greeting = "Good day. I attend to bookings, routes, and anything else.";
   const tagline = "Move in silence. Discretion is our policy.";
-  const fallback = "I don't have a direct answer for that. Please use the Reserve form below, or email bookings@luxurytransport.co.uk and a concierge will be in touch within the hour.";
+  const fallback = "I don't have a direct answer for that. Please use the Reserve form below, or email concierge@luxurytransport.co.uk and a concierge will be in touch within the hour.";
 
   const toggle = document.getElementById('chatToggle');
   const panel = document.getElementById('chat');
